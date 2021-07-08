@@ -1,5 +1,23 @@
-{{!-- The following component displays Ember's default welcome message. --}}
-<WelcomePage />
-{{!-- Feel free to remove this! --}}
+
+<div style="padding: 20px; width: 200px;">
+  <PowerSelect
+    @options={{this.names}}
+    @selected={{this.name}}
+    @placeholder="Please, select one name"
+    @class="names-select"
+    @onChange={{this.selectName}} as |name|>
+    {{name}}
+  </PowerSelect>
+  <hr>
+   <PowerSelect
+    @options={{this.states}}
+    @selected={{this.state}}
+    @searchField="name"
+    @placeholder="Please, select one state"
+    @onChange={{this.selectState}} as |state|>
+    {{state.name}}
+  </PowerSelect>
+</div>
+
 
 {{outlet}}
